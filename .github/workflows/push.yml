@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Install dependencies
-      - name: Setup node 14
-        uses: actions/setup-node@v2
+      - name: Setup node 20
+        uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '20'
 
       # Build Docs
       - name: Build docs
@@ -25,7 +25,7 @@ jobs:
           yarn install
           yarn docs:build
 
-      # Deploy to gh-pages
+      # Deploy to gh-pages	
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
